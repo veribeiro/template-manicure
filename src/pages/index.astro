@@ -1,11 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import WhatsApp from '../assets/whatsapp.png';
+import Facebook from '../assets/facebook.png';
+import Instagram from '../assets/instagram.png';
+import Gps from '../assets/gps.png';
+import Clock from '../assets/clock.png';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout title="Minha Landing Page Otimizada">
+<body>
   <header role="banner">
   <div class="wrap nav">
     <div class="logo"><span class="swatch" style="background:var(--wine)"></span> Nome da sua marca</div>
@@ -21,7 +28,7 @@ import Layout from '../layouts/Layout.astro';
 </header>
 
 <a href="https://wa.me" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-  <img src="/whatsapp.png" alt="WhatsApp" style="width:40px;height:40px">
+  <Image src={WhatsApp} alt="WhatsApp" style="width:40px;height:40px"/>
 </a>
 
 <section class="hero">
@@ -226,10 +233,10 @@ import Layout from '../layouts/Layout.astro';
     <div class="location-grid">
     <div class="address">
       <div class="align">
-        <img src="/gps.png" alt="Ícone de localização" style="width:20px;height:20px;margin-right:8px">
+        <Image src={Gps} alt="Ícone de localização" style="width:20px;height:20px;margin-right:8px"/>
       <span>Endereço: </span></div><p>Rua Exemplo, 123 — Bairro Central, [Cidade] - [Estado]</p>
       <div class="align">
-        <img src="/clock.png" alt="Ícone de horário" style="width:20px;height:20px;margin-right:8px">
+        <Image src={Clock} alt="Ícone de horário" style="width:20px;height:20px;margin-right:8px"/>
       <span>Atendimento: </span></div><p>Atendimento com hora marcada. Agende pelo WhatsApp.</p>
     </div>
     <div class="map">
@@ -291,8 +298,8 @@ import Layout from '../layouts/Layout.astro';
     <div class="redes-sociais">
       <div class="mono">Redes Sociais</div>
       <div class="icons">
-      <div class="circle-icon"><img src="/instagram.png" alt="Instagram" style="width: 100%; height: auto; max-width: 20px; max-height: 20px;"></div>
-      <div class="circle-icon"><img src="/facebook.png" alt="Facebook" style="width: 100%; height: auto; max-width: 20px; max-height: 20px;"></div>
+      <div class="circle-icon"><Image src={Instagram} alt="Instagram" style="width: 100%; height: auto; max-width: 20px; max-height: 20px;"/></div>
+      <div class="circle-icon"><Image src={Facebook} alt="Facebook" style="width: 100%; height: auto; max-width: 20px; max-height: 20px;"/></div>
       </div>
     </div>
   </div>
@@ -302,6 +309,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="wrap copyright">Desenvolvido por @veronicadev.pages</div>
   </div>
 </footer>
+</body>
 </Layout>
 
 <style>
@@ -393,7 +401,7 @@ header{
 .btn-ghost:hover{background:var(--wine);color:#fff}
 
 /* HERO */
-.hero{padding:88px 0 64px; min-height:calc(100vh - 88px);}
+.hero{padding:88px 0 64px; min-height: 200px}
 .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center}
 .eyebrow{
   display:flex;align-items:center;gap:8px;
